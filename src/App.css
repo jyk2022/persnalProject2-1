@@ -179,7 +179,3 @@ input {
   background-color: green;
   color: white;
 }
-
-input:focus {
-  outline: 3px solid blue;
-}

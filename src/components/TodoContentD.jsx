@@ -19,7 +19,7 @@ function TodoContentD(props) {
       <button
         className="detG"
         onClick={() => {
-          props.handleDone(props.todo.id);
+          props.handleCancel(props.todo.id);
         }}
       >
         취소하기

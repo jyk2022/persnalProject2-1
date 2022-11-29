@@ -44,13 +44,21 @@ function App() {
     setTodos(newTodoList);
   };
 
-  const doneTodoHandler = (id) => {
+  const updateTodoHandler = (id) => {
     const targetIdx = todos.findIndex((todo) => todo.id === id);
     const temp = [...todos];
-    temp[targetIdx] = { ...temp[targetIdx], done: !temp[targetIdx].done };
+    temp[targetIdx] = { ...temp[targetIdx], done: true };
     setTodos(temp);
 
-    //temp[해당 인덱스 찾는 함수]
+    //temp[targetIdx] = {..........} -> 배열의 인덱스의 값을 바꿔 주는 것
+  };
+  const CancelTodoHandler = (id) => {
+    const targetIdx = todos.findIndex((todo) => todo.id === id);
+    const temp = [...todos];
+    temp[targetIdx] = { ...temp[targetIdx], done: false };
+    setTodos(temp);
+
+    //temp[targetIdx] = {..........} -> 배열의 인덱스의 값을 바꿔 주는 것
   };
 
   console.log(todos);
@@ -69,7 +77,7 @@ function App() {
         <input
           value={title}
           placeholder="제목을 입력해주세요"
-          // 인풋 이벤트로 들어온 입력 값을 name의 값으로 업데이트
+          // 인풋 이벤트로 들어온 입력 값을 title의 값으로 업데이트
           onChange={(todo) => setTitle(todo.target.value)}
           autofocus
         />
@@ -77,7 +85,7 @@ function App() {
         <input
           value={content}
           placeholder="내용을 입력해주세요"
-          // 인풋 이벤트로 들어온 입력 값을 age의 값으로 업데이트
+          // 인풋 이벤트로 들어온 입력 값을 content의 값으로 업데이트
           onChange={(todo) => setContent(todo.target.value)}
         />
         <CustomButton
@@ -101,7 +109,7 @@ function App() {
               return (
                 <TodoContentY
                   handleDelete={deleteTodoHandler}
-                  handleDone={doneTodoHandler}
+                  handleUpdate={updateTodoHandler}
                   todo={todo}
                   key={todo.id}
                 ></TodoContentY>
@@ -121,7 +129,7 @@ function App() {
               return (
                 <TodoContentD
                   handleDelete={deleteTodoHandler}
-                  handleDone={doneTodoHandler}
+                  handleCancel={CancelTodoHandler}
                   todo={todo}
                   key={todo.id}
                 ></TodoContentD>
