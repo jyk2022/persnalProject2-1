@@ -1,0 +1,148 @@
+.inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  width: 100%;
+  border: none;
+  margin: 2% auto;
+  background-color: antiquewhite;
+  border-radius: 50px 50px 50px 50px;
+  box-shadow: 2% 2% 2% 2%;
+  padding: 2% 2% 2% 2%;
+}
+
+.inner p {
+  display: inline-block;
+  text-align: center;
+  margin-left: 1%;
+}
+
+input {
+  width: 400px;
+  height: 50px;
+  text-align: center;
+  border-radius: 15px 15px 15px 15px;
+  margin-left: 1%;
+}
+
+.inner .logo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.inner .logo h2 {
+  display: inline-block;
+}
+
+/* 컨텐츠 영역 */
+
+.inner .contentUp {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.inner .contentUp .up {
+  display: block;
+  position: absolute;
+  width: 150px;
+  left: 10%;
+}
+
+/* 투두리스트 컨텐츠 div */
+
+.inner2 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  width: 100%;
+  border: 1px solid red;
+  margin: 0% auto;
+  padding: 1% 1% 1% 1%;
+}
+
+.inner2 .TodoContentAll {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin: 0 auto;
+  padding: 2% 2% 2% 7%;
+}
+
+.inner2 .TodoContentAll .TodoContentY {
+  width: 250px;
+  height: 250px;
+  padding-top: 2%;
+  padding-left: 2%;
+  border: 2px solid blue;
+  border-radius: 10% 10% 10% 10%;
+  text-align: left;
+}
+
+.inner2 .TodoContentAll .TodoContentY h3 {
+  display: inline-block;
+}
+
+.inner2 .TodoContentAll .TodoContentY span {
+  display: inline-block;
+  font-size: 18px;
+}
+
+.inner2 .TodoContentAll .TodoContentY .detR {
+  width: 80px;
+  height: 50px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.inner2 .TodoContentAll .TodoContentY .detG {
+  width: 80px;
+  height: 50px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.inner2 .TodoContentAll .TodoContentD {
+  width: 250px;
+  height: 250px;
+  padding-top: 2%;
+  padding-left: 2%;
+  border: 2px solid blue;
+  border-radius: 10% 10% 10% 10%;
+  text-align: left;
+}
+
+.inner2 .TodoContentAll .TodoContentD h3 {
+  display: inline-block;
+}
+
+.inner2 .TodoContentAll .TodoContentDone .detR {
+  width: 80px;
+  height: 50px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.inner2 .TodoContentAll .TodoContentD .detG {
+  width: 80px;
+  height: 50px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border: none;
+  cursor: pointer;
+}
