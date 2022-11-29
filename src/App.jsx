@@ -5,12 +5,6 @@ import CustomButton from "./components/Button";
 import TodoContentD from "./components/TodoContentD";
 import TodoContentY from "./components/TodocontentY";
 
-//컴포넌트 모아놓은 곳
-
-// 버튼 컴포넌트
-
-// 버튼 컴포넌트
-
 function App() {
   // 자바스크립트 작성하는 곳
 
@@ -34,7 +28,15 @@ function App() {
       content: content,
       done: false,
     };
-    setTodos([...todos, newTodos]);
+    if (newTodos.content === "" || newTodos.title === "") {
+      alert("칸을 채워주세요!!");
+    } else {
+      setTodos([...todos, newTodos]);
+      setTitle("");
+      setContent("");
+    }
+
+    // 배열에 [] 다가 전개연산자를 앞에 두고, 뒤에 변경될 상수 혹은 변수를 넣어두면, 변경된 부분만 덮어써서 보여줌.
   };
 
   const deleteTodoHandler = (id) => {
@@ -42,27 +44,20 @@ function App() {
     setTodos(newTodoList);
   };
 
-  const updateTodoHandler = (id) => {
+  const doneTodoHandler = (id) => {
     const targetIdx = todos.findIndex((todo) => todo.id === id);
     const temp = [...todos];
-    temp[targetIdx] = { ...temp[targetIdx], done: true };
+    temp[targetIdx] = { ...temp[targetIdx], done: !temp[targetIdx].done };
     setTodos(temp);
 
     //temp[해당 인덱스 찾는 함수]
-  };
-
-  const cancelTodoHandler = (id) => {
-    const targetIdx = todos.findIndex((todo) => todo.id === id);
-    const temp = [...todos];
-    temp[targetIdx] = { ...temp[targetIdx], done: false };
-    setTodos(temp);
   };
 
   console.log(todos);
 
   // 인덱스 리턴하는 곳
   return (
-    <div>
+    <div className="App">
       <section className="inner">
         <div className="logo">
           <h2>👸리액트 기초 다지기👸</h2>
@@ -76,6 +71,7 @@ function App() {
           placeholder="제목을 입력해주세요"
           // 인풋 이벤트로 들어온 입력 값을 name의 값으로 업데이트
           onChange={(todo) => setTitle(todo.target.value)}
+          autofocus
         />
         <p>내용:</p>
         <input
@@ -105,7 +101,7 @@ function App() {
               return (
                 <TodoContentY
                   handleDelete={deleteTodoHandler}
-                  handleUpdate={updateTodoHandler}
+                  handleDone={doneTodoHandler}
                   todo={todo}
                   key={todo.id}
                 ></TodoContentY>
@@ -125,7 +121,7 @@ function App() {
               return (
                 <TodoContentD
                   handleDelete={deleteTodoHandler}
-                  handleCancel={cancelTodoHandler}
+                  handleDone={doneTodoHandler}
                   todo={todo}
                   key={todo.id}
                 ></TodoContentD>

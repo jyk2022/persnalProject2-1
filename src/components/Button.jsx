@@ -10,6 +10,7 @@ function CustomButton(props) {
     border,
     height,
     borderRadius,
+    cursor,
   } = props;
   if (color) {
     return (
@@ -23,6 +24,7 @@ function CustomButton(props) {
           height: height,
           margin: margin,
           borderRadius: borderRadius,
+          cursor: "pointer",
         }}
         onClick={onClick}
       >
