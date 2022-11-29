@@ -65,7 +65,7 @@ function App() {
     <div>
       <section className="inner">
         <div className="logo">
-          <h2>리액트 기초 다지기</h2>
+          <h2>👸리액트 기초 다지기👸</h2>
           <h2>MY TodoList</h2>
         </div>
       </section>
@@ -98,7 +98,7 @@ function App() {
       </section>
 
       <section className="inner2">
-        <h2>이거 해야 함!!!</h2>
+        <h2>😎 이거 해야 함!!!</h2>
         <article className="TodoContentAll">
           {todos.map((todo) => {
             if (todo.done === false) {
@@ -118,7 +118,7 @@ function App() {
       </section>
 
       <section className="inner2">
-        <h2>이거 다 했음</h2>
+        <h2>😭이거 다 했음</h2>
         <article className="TodoContentAll">
           {todos.map((todo) => {
             if (!todo.done === false) {
