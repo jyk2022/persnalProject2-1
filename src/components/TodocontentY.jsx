@@ -19,7 +19,7 @@ function TodoContentY(props) {
       <button
         className="detG"
         onClick={() => {
-          props.handleUpdate(props.todo.id);
+          props.handledone(props.todo.id);
         }}
       >
         완료하기

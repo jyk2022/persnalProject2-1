@@ -20,10 +20,11 @@ function App() {
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-
+  const [id, setId] = useState(3);
   const addUserHandler = () => {
+    setId(id + 1);
     const newTodos = {
-      id: todos.length + 1,
+      id: id,
       title: title,
       content: content,
       done: false,
@@ -44,18 +45,10 @@ function App() {
     setTodos(newTodoList);
   };
 
-  const updateTodoHandler = (id) => {
+  const doneTodoHandler = (id) => {
     const targetIdx = todos.findIndex((todo) => todo.id === id);
     const temp = [...todos];
-    temp[targetIdx] = { ...temp[targetIdx], done: true };
-    setTodos(temp);
-
-    //temp[targetIdx] = {..........} -> 배열의 인덱스의 값을 바꿔 주는 것
-  };
-  const CancelTodoHandler = (id) => {
-    const targetIdx = todos.findIndex((todo) => todo.id === id);
-    const temp = [...todos];
-    temp[targetIdx] = { ...temp[targetIdx], done: false };
+    temp[targetIdx] = { ...temp[targetIdx], done: !temp[targetIdx].done };
     setTodos(temp);
 
     //temp[targetIdx] = {..........} -> 배열의 인덱스의 값을 바꿔 주는 것
@@ -109,7 +102,7 @@ function App() {
               return (
                 <TodoContentY
                   handleDelete={deleteTodoHandler}
-                  handleUpdate={updateTodoHandler}
+                  handledone={doneTodoHandler}
                   todo={todo}
                   key={todo.id}
                 ></TodoContentY>
@@ -129,7 +122,7 @@ function App() {
               return (
                 <TodoContentD
                   handleDelete={deleteTodoHandler}
-                  handleCancel={CancelTodoHandler}
+                  handledone={doneTodoHandler}
                   todo={todo}
                   key={todo.id}
                 ></TodoContentD>
