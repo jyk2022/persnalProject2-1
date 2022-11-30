@@ -42,11 +42,13 @@ function App() {
 
   const deleteTodoHandler = (id) => {
     const newTodoList = todos.filter((todo) => todo.id !== id);
+    //찾은 것들의 아닌 것만 보여주는 것
     setTodos(newTodoList);
   };
 
   const doneTodoHandler = (id) => {
     const targetIdx = todos.findIndex((todo) => todo.id === id);
+    //배열을 돌면서 값을 기준으로 일치되는 값을 찾고, 그에 해당하는 인덱스를 반환함.
     const temp = [...todos];
     temp[targetIdx] = { ...temp[targetIdx], done: !temp[targetIdx].done };
     setTodos(temp);
