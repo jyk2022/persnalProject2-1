@@ -29,7 +29,7 @@ function App() {
       content: content,
       done: false,
     };
-    if (newTodos.content === "" || newTodos.title === "") {
+    if (newTodos.content.trim() === "" || newTodos.title.trim() === "") {
       alert("칸을 채워주세요!!");
     } else {
       setTodos([...todos, newTodos]);

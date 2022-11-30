@@ -1,17 +1,18 @@
 function TodoContentD(props) {
+  const { todo } = props;
   return (
     <div className="TodoContentD">
       <span>제목 : </span>
-      <h3> {props.todo.title}</h3>
+      <h3> {todo.title}</h3>
 
       <p>
         <span>내용 : </span>
-        {props.todo.content}
+        {todo.content}
       </p>
       <button
         className="detR"
         onClick={() => {
-          props.handleDelete(props.todo.id);
+          props.handleDelete(todo.id);
         }}
       >
         삭제하기
@@ -19,7 +20,7 @@ function TodoContentD(props) {
       <button
         className="detG"
         onClick={() => {
-          props.handledone(props.todo.id);
+          props.handledone(todo.id);
         }}
       >
         취소하기
