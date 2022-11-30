@@ -51,6 +51,8 @@ function App() {
     //배열을 돌면서 값을 기준으로 일치되는 값을 찾고, 그에 해당하는 인덱스를 반환함.
     const temp = [...todos];
     temp[targetIdx] = { ...temp[targetIdx], done: !temp[targetIdx].done };
+    //그냥 todo[targetIdx]으로 할 수 있지만, 배열의 값을 불변성을 유지하기 위하여
+    // 'temp[targetIdx] = { ...temp[targetIdx], done: !temp[targetIdx].done }'; 이런 식으로 새로운 배열로 복사함..
     setTodos(temp);
 
     //temp[targetIdx] = {..........} -> 배열의 인덱스의 값을 바꿔 주는 것
