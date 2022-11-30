@@ -41,6 +41,7 @@ function App() {
   };
 
   const deleteTodoHandler = (id) => {
+    //id값을 데이터 구조에서 받아옴.
     const newTodoList = todos.filter((todo) => todo.id !== id);
     //찾은 것들의 아닌 것만 보여주는 것
     setTodos(newTodoList);
