@@ -41,9 +41,9 @@ function App() {
   };
 
   const deleteTodoHandler = (id) => {
-    //id값을 데이터 구조에서 받아옴.
+    //id값을 데이터 구조에서 받아와서 deleteTodoHandler 함수 안에서 속성을 사용할 수 있음.
     const newTodoList = todos.filter((todo) => todo.id !== id);
-    //찾은 것들의 아닌 것만 보여주는 것
+    //찾은 것들의 아닌 것만 보여주는 것. 즉 1,2,3,4,5 중에 4번을 찾으면 1,2,3,5를 보여줌.
     setTodos(newTodoList);
   };
 
